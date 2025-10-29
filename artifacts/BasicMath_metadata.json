@@ -77,7 +77,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/basicMath.sol": "BasicMath"
+			"contracts/BasicMath.sol": "BasicMath"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -91,12 +91,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/basicMath.sol": {
-			"keccak256": "0xf0592bae1ba4dcd1c55bf9ff5f540bf1f5f97fc9e6b0078bb31e4ca6808361c8",
+		"contracts/BasicMath.sol": {
+			"keccak256": "0x9cec747c8869a22e389b6483a9487f2a35786ab9694a12042bbbb354b38dd66b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c0d87f4939fb0292e3fd417ce16a0ab00d362a0456a80bb6fb229656879d6645",
-				"dweb:/ipfs/QmaQMieYfKfgcRfaHZaet4HmEZ2kQ2DyPjCDceNfmWnkP1"
+				"bzz-raw://47d1a134ff89f13d2d70f2091ec2e01264632593ac893dd56b47a27348007a7e",
+				"dweb:/ipfs/QmfR4a6og4DLsuY2uiXzYCLeupKaviTovPiY4n49G3jJTE"
 			]
 		}
 	},
