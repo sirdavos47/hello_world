@@ -1,0 +1,90 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newGreeting",
+						"type": "string"
+					}
+				],
+				"name": "GreetingUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getGreeting",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newGreeting",
+						"type": "string"
+					}
+				],
+				"name": "setGreeting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/greeting.sol": "Greeting"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/greeting.sol": {
+			"keccak256": "0xf6b25e635fe2969ef3a8e66178fd1a7ae60db9b71c6a9f287b01a6aa6d141fe7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cf423ec4ef587efbca404ec1d44e422d410339fa5e35ffe154cd1945e03ee298",
+				"dweb:/ipfs/QmcNZnJYkzFjrNgEycgTuMquKBRf4bjGxbj3h3VRbSBker"
+			]
+		}
+	},
+	"version": 1
+}
