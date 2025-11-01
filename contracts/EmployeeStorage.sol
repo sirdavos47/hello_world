@@ -1,14 +1,17 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.17;
 
 contract EmployeeStorage {
-    error TooManyShares(uint256 totalShares);
+    // State variables optimized for storage packing
+    uint128 private shares;       // 16 bytes (max 2^128-1, enough for shares)
+    uint128 private salary;       // 16 bytes (max 1,000,000 fits in 20 bits)
+    uint256 public idNumber;      // 32 bytes (full range needed)
+    string public name;           // dynamic storage
 
-    uint128 private shares;       // Max 5000 (fits in uint16, but aligned to uint128)
-    uint128 private salary;       // Max 1,000,000 (fits in uint24, but aligned to uint128)
-    uint256 public idNumber;      // Full 256-bit range
-    string public name;           // Dynamic storage
+    // Custom error
+    error TooManyShares(uint totalShares);
 
+    // Constructor with required values
     constructor() {
         shares = 1000;
         name = "Pat";
@@ -16,35 +19,42 @@ contract EmployeeStorage {
         idNumber = 112358132134;
     }
 
-    function viewSalary() external view returns (uint256) {
+    // View functions
+    function viewSalary() public view returns (uint) {
         return salary;
     }
 
-    function viewShares() external view returns (uint256) {
+    function viewShares() public view returns (uint) {
         return shares;
     }
 
-    function grantShares(uint256 _newShares) public {
-        // Revert if _newShares itself is too large (even if shares=0)
-        if (_newShares > 5000) {
-            revert("Too many shares");
-        }
-
-        // Revert if granting would exceed 5000 shares
-        if (shares + _newShares > 5000) {
-            revert TooManyShares(shares + _newShares);
-        }
-
-        // Safe to add (casting is safe due to prior checks)
-        shares += uint128(_newShares);
+function grantShares(uint _newShares) public {
+    if (_newShares > 5000) {
+        revert("Too many shares");
     }
 
-    // DO NOT MODIFY (for testing)
+    uint newTotal = shares + _newShares;
+    if (newTotal > 5000) {
+        revert TooManyShares(newTotal);
+    }
+
+    shares = uint128(newTotal);  // ✅ Fixed with explicit conversion
+}
+
+    /**
+    * Do not modify this function. It is used to enable the unit test for this pin
+    * to check whether or not you have configured your storage variables to make
+    * use of packing.
+    */
     function checkForPacking(uint _slot) public view returns (uint r) {
-        assembly { r := sload(_slot) }
+        assembly {
+            r := sload(_slot)
+        }
     }
 
-    // DO NOT MODIFY (for testing)
+    /**
+    * Warning: Anyone can use this function at any time!
+    */
     function debugResetShares() public {
         shares = 1000;
     }

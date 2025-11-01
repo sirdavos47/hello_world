@@ -120,7 +120,14 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"checkForPacking(uint256)": {
+					"notice": "Do not modify this function. It is used to enable the unit test for this pin to check whether or not you have configured your storage variables to make use of packing."
+				},
+				"debugResetShares()": {
+					"notice": "Warning: Anyone can use this function at any time!"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -141,11 +148,11 @@
 	},
 	"sources": {
 		"contracts/EmployeeStorage.sol": {
-			"keccak256": "0x186233a720fcb676cbb64c50f823a5f54e2239c11c7eceac0918b86550a56db7",
+			"keccak256": "0x0ccf55820b8d79815965eb89f15044a65e31509d459e02ce6f320d915c636291",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c55d4ed55bd9861cf49938ad7694259d56998185a26dfd612eaf7c78caea6cb1",
-				"dweb:/ipfs/QmbSZNxe37CR1nUcjHB39ihtcvQ9bQCdFJFEGGH6NarURE"
+				"bzz-raw://183db4edace0491e8faf7376765732ab4213db0ec135bf9da6cff24cadef2ea4",
+				"dweb:/ipfs/QmWiCPe4rb9cV3NwmmkNmGrPCgx4RNK1MkiMPYCWtn5Mk3"
 			]
 		}
 	},
