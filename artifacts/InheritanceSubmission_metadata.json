@@ -1,0 +1,98 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_salesPerson",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_engineeringManager",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "engineeringManager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "salesPerson",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Contract for deploying instances of Salesperson and EngineeringManager.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Constructor to initialize the InheritanceSubmission contract.",
+					"params": {
+						"_engineeringManager": "Address of the deployed EngineeringManager instance.",
+						"_salesPerson": "Address of the deployed Salesperson instance."
+					}
+				}
+			},
+			"title": "InheritanceSubmission",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Inheritence.sol": "InheritanceSubmission"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Inheritence.sol": {
+			"keccak256": "0x8444afb6d6c3d05803f5a2cab809d24515bb17079852a4eed35ad45fcb51c68f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a5a3e522aad6b1be3e0c9dfd563c1ae2e5ee64f934de2ec325dc3973ff81c188",
+				"dweb:/ipfs/QmPKetCcm9XASqUFRY2BefvuekP51jh1hHfA33tA1geXAp"
+			]
+		}
+	},
+	"version": 1
+}

@@ -11,6 +11,11 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [],
+				"name": "DirectAccessNotAllowed",
+				"type": "error"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -50,9 +55,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "uint16",
 						"name": "_newShares",
-						"type": "uint256"
+						"type": "uint16"
 					}
 				],
 				"name": "grantShares",
@@ -122,7 +127,7 @@
 			"kind": "user",
 			"methods": {
 				"checkForPacking(uint256)": {
-					"notice": "Do not modify this function. It is used to enable the unit test for this pin to check whether or not you have configured your storage variables to make use of packing."
+					"notice": "Do not modify this function. It is used to enable the unit test"
 				},
 				"debugResetShares()": {
 					"notice": "Warning: Anyone can use this function at any time!"
@@ -148,11 +153,11 @@
 	},
 	"sources": {
 		"contracts/EmployeeStorage.sol": {
-			"keccak256": "0x0ccf55820b8d79815965eb89f15044a65e31509d459e02ce6f320d915c636291",
+			"keccak256": "0x4dd67166f12bf963bcda35df96fc0d886db5ce3129bd97632fbd68367c8d4aba",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://183db4edace0491e8faf7376765732ab4213db0ec135bf9da6cff24cadef2ea4",
-				"dweb:/ipfs/QmWiCPe4rb9cV3NwmmkNmGrPCgx4RNK1MkiMPYCWtn5Mk3"
+				"bzz-raw://22f9307d114c1251c55cf536716540f75308d6e8e1eb8fa7647150956d5ea5a8",
+				"dweb:/ipfs/QmdFzhuowGLEyTzddyaXz7ZDG4pvhfu8YVP4CFpLMfMvNC"
 			]
 		}
 	},

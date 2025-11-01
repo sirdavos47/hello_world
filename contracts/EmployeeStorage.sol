@@ -3,13 +3,14 @@ pragma solidity ^0.8.17;
 
 contract EmployeeStorage {
     // State variables optimized for storage packing
-    uint128 private shares;       // 16 bytes (max 2^128-1, enough for shares)
-    uint128 private salary;       // 16 bytes (max 1,000,000 fits in 20 bits)
-    uint256 public idNumber;      // 32 bytes (full range needed)
-    string public name;           // dynamic storage
+    uint128 private shares;       // Private - only accessible through viewShares()
+    uint128 private salary;       // Private - only accessible through viewSalary()
+    uint256 public idNumber;      // Public
+    string public name;           // Public
 
-    // Custom error
+    // Custom errors
     error TooManyShares(uint totalShares);
+    error DirectAccessNotAllowed();  // For any attempt to access private vars directly
 
     // Constructor with required values
     constructor() {
@@ -19,32 +20,30 @@ contract EmployeeStorage {
         idNumber = 112358132134;
     }
 
-    // View functions
+    // Public accessor for private salary variable
     function viewSalary() public view returns (uint) {
         return salary;
     }
 
+    // Public accessor for private shares variable
     function viewShares() public view returns (uint) {
         return shares;
     }
 
-function grantShares(uint _newShares) public {
-    if (_newShares > 5000) {
-        revert("Too many shares");
+    
+    // Function to grant additional shares to the employee
+    function grantShares(uint16 _newShares) public {
+        // Check if the requested shares exceed the limit
+        if (_newShares > 5000) {
+            revert("Too many shares"); // Revert with error message
+        } else if (shares + _newShares > 5000) {
+            revert TooManyShares(shares + _newShares); // Revert with custom error message
+        }
+        shares += _newShares; // Grant the new shares
     }
-
-    uint newTotal = shares + _newShares;
-    if (newTotal > 5000) {
-        revert TooManyShares(newTotal);
-    }
-
-    shares = uint128(newTotal);  // ✅ Fixed with explicit conversion
-}
 
     /**
-    * Do not modify this function. It is used to enable the unit test for this pin
-    * to check whether or not you have configured your storage variables to make
-    * use of packing.
+    * Do not modify this function. It is used to enable the unit test
     */
     function checkForPacking(uint _slot) public view returns (uint r) {
         assembly {
