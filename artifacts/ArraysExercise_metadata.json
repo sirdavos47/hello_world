@@ -7,33 +7,61 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "afterY2K",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "_toAppend",
+						"type": "uint256[]"
+					}
+				],
+				"name": "appendToNumbers",
+				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNumbers",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "totalShares",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "TooManyShares",
-				"type": "error"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_slot",
-						"type": "uint256"
-					}
-				],
-				"name": "checkForPacking",
+				"name": "numbers",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "r",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -42,7 +70,21 @@
 			},
 			{
 				"inputs": [],
-				"name": "debugResetShares",
+				"name": "resetNumbers",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetSenders",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetTimestamps",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -51,57 +93,43 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_newShares",
+						"name": "_unixTimestamp",
 						"type": "uint256"
 					}
 				],
-				"name": "grantShares",
+				"name": "saveTimestamp",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "idNumber",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "name",
+				"name": "senders",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "address",
 						"name": "",
-						"type": "string"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "viewSalary",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "viewShares",
+				"name": "timestamps",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -126,7 +154,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/EmployeeStorage.sol": "EmployeeStorage"
+			"contracts/ArraysExcercise.sol": "ArraysExercise"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -140,12 +168,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/EmployeeStorage.sol": {
-			"keccak256": "0x186233a720fcb676cbb64c50f823a5f54e2239c11c7eceac0918b86550a56db7",
+		"contracts/ArraysExcercise.sol": {
+			"keccak256": "0xbd52d948f9a48bfe601bdb51a52668be3d5db54e9569f73e3942f0554cde9b3c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c55d4ed55bd9861cf49938ad7694259d56998185a26dfd612eaf7c78caea6cb1",
-				"dweb:/ipfs/QmbSZNxe37CR1nUcjHB39ihtcvQ9bQCdFJFEGGH6NarURE"
+				"bzz-raw://35c2e13768add9aea144e835b9cdf874fc426f3bb718907b9b4c06eed4be6325",
+				"dweb:/ipfs/QmTxFzeX8NqLBAcG6KMSzwZNrV3zw7UHrMZB57WMAFzShy"
 			]
 		}
 	},
